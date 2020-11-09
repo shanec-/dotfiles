@@ -1,6 +1,7 @@
 # wsl-dotfiles
 
 Implemented based on https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html
+tmux config based on https://github.com/gpakosz/.tmux
 
 ## Initial Setup
 
