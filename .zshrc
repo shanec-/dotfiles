@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/wr/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 export PATH=$PATH:/Users/[username]/.npm-packages/bin
 
 # Set name of the theme to load --- if set to "random", it will
@@ -72,7 +72,7 @@ ZSH_THEME="agnoster"
 plugins=(ssh-agent git zsh-autosuggestions)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent identities id_rsa id_yen
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 source $ZSH/oh-my-zsh.sh
@@ -105,13 +105,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias dotfiles="/usr/bin/git --git-dir=$HOME/wsl-dotfiles.git/ --work-tree=$HOME"
 
-LS_COLORS="ow=01;36;40" && export LS_COLORS
-
 set -o vi
 
 fortune | cowsay | lolcat
-
-alias open=explorer.exe
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -119,3 +115,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
+
+if grep -qi Microsoft /proc/version; then
+	LS_COLORS="ow=01;36;40" && export LS_COLORS
+	alias open=explorer.exe
+else
+	lastlog -u $USER | perl -lane 'END{print "Last login: @F[3..6] $F[8] from $F[2]"}'
+fi
