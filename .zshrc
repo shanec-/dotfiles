@@ -103,22 +103,28 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME"
-
-set -o vi
-
-fortune | cowsay | lolcat
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export EDITOR='nvim'
+
+set -o vi
+fortune | cowsay | lolcat
 
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
 
+# dotfiles
+alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME"
+
+# wsl specific configuration
 if grep -qi Microsoft /proc/version; then
 	LS_COLORS="ow=01;36;40" && export LS_COLORS
 	alias open=explorer.exe
-else
+	alias lcurl="cmd.exe /c curl"
+fi
+
+# only remote connections
+if [[ -n $SSH_CONNECTION ]]; then
 	lastlog -u $USER | perl -lane 'END{print "Last login: @F[3..6] $F[8] from $F[2]"}'
 fi
