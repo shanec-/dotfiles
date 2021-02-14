@@ -128,3 +128,5 @@ fi
 if [[ -n $SSH_CONNECTION ]]; then
 	lastlog -u $USER | perl -lane 'END{print "Last login: @F[3..6] $F[8] from $F[2]"}'
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
