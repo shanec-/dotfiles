@@ -118,6 +118,7 @@ RPROMPT='[%D{%L:%M:%S %p}]'
 # dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME"
 alias ip="ip --color=auto"
+alias weather="curl http://wttr.in/Melbourne,Australia"
 
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
