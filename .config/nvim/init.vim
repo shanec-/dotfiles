@@ -7,7 +7,7 @@ set nu
 set nohlsearch
 set nowrap
 set smartindent
-set colorcolumn=80
+set colorcolumn=100
 set scrolloff=8
 
 call plug#begin('~/.vim/plugged')
@@ -16,6 +16,8 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
@@ -43,3 +45,7 @@ nnoremap <C-p> :Files<CR>
 nnoremap <C-g> :GFiles<CR>
 nnoremap <C-o> :Buffers<CR>
 nnoremap <C-f> :Rg 
+
+
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
