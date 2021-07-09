@@ -53,11 +53,19 @@ let g:limelight_conceal_ctermfg = 240
 nnoremap <Leader>gy :Goyo<CR>
 
 function s:goyo_enter() 
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status off
+        silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    endif
     Limelight
     set wrap linebreak
 endfunction
 
 function s:goyo_leave() 
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status on
+        silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    endif
     Limelight!
     set nowrap
 endfunction
