@@ -49,3 +49,19 @@ nnoremap <C-f> :Rg
 
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
+
+nnoremap <Leader>gy :Goyo<CR>
+
+function s:goyo_enter() 
+    Limelight
+    set wrap linebreak
+endfunction
+
+function s:goyo_leave() 
+    Limelight!
+    set nowrap
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave() 
+
