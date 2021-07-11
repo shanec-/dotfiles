@@ -125,6 +125,7 @@ if grep -qi Microsoft /proc/version; then
 	LS_COLORS="ow=01;36;40" && export LS_COLORS
 	alias open=explorer.exe
 	alias lcurl="cmd.exe /c curl"
+    alias drafts="cd `wslpath \"$(wslvar USERPROFILE)\"`/OneDrive/Blog"
 fi
 
 # only remote connections
