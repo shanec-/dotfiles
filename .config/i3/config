@@ -178,7 +178,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #bar {
-#        status_command i3status
+#        #status_command i3status
+#        strip_workspace_numbers yes
 #}
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
