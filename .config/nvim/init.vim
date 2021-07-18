@@ -9,6 +9,7 @@ set nowrap
 set smartindent
 set colorcolumn=100
 set scrolloff=8
+set noshowmode
 
 call plug#begin('~/.vim/plugged')
 
@@ -19,6 +20,8 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
