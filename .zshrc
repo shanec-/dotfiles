@@ -117,9 +117,20 @@ RPROMPT='[%D{%L:%M:%S %p}]'
 
 # dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME"
-alias ip="ip --color=auto"
+
+#ip
+alias ip="ip --color=auto"               # colorize
 alias weather="curl http://wttr.in/Melbourne,Australia"
 alias wgeto="wget -qO- "
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+# adding flags
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
 
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
