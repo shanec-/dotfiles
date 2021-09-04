@@ -43,6 +43,8 @@ alias rm='rm -i'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+alias ytdl='docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio '
+alias ytdlb='docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio --batch-file '
 
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
