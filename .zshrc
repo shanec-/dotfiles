@@ -10,7 +10,6 @@ ZSH_THEME="elessar"
 plugins=(ssh-agent git zsh-autosuggestions)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent identities id_rsa id_yen
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 source $ZSH/oh-my-zsh.sh
@@ -22,7 +21,7 @@ export NVM_DIR="$HOME/.nvm"
 export EDITOR='nvim'
 
 set -o vi
-fortune | cowsay | lolcat
+echo "    " | lolcat
 
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
