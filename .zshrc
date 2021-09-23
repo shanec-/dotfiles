@@ -42,6 +42,10 @@ alias rm='rm -i'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
+alias ytdl=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio '
+alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio --batch-file '
+alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdl --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
+alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdl --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
 
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
