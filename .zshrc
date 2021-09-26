@@ -10,7 +10,7 @@ ZSH_THEME="elessar"
 plugins=(ssh-agent git zsh-autosuggestions)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent lifetime 4h
+zstyle :omz:plugins:ssh-agent lifetime 8h
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,9 +19,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export EDITOR='nvim'
+export BROWSER='chromium'
 
 set -o vi
-echo "    " | lolcat
+echo "     " | lolcat
 
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
