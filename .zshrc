@@ -7,7 +7,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting)
 
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent lifetime 4h
@@ -21,6 +21,18 @@ export NVM_DIR="$HOME/.nvm"
 export EDITOR='nvim'
 
 set -o vi
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Edit command in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
 echo "    " | lolcat
 
 # Add time stamp on the right hand side
