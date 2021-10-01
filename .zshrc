@@ -7,11 +7,10 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent lifetime 8h
-
+[ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
+[ -f $HOME/.config/zsh/work.zsh ] && source $HOME/.config/zsh/work.zsh
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
@@ -23,6 +22,17 @@ export BROWSER='chromium'
 
 set -o vi
 echo "     " | lolcat
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
+# Edit command in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
