@@ -7,11 +7,10 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent lifetime 4h
-
+[ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
+[ -f $HOME/.config/zsh/work.zsh ] && source $HOME/.config/zsh/work.zsh
 source $ZSH/oh-my-zsh.sh
 
 export NVM_DIR="$HOME/.nvm"
