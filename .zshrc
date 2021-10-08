@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
-export PATH=$PATH:/Users/[username]/.npm-packages/bin
+export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools
 
 ZSH_THEME="elessar"
 
