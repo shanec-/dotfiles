@@ -64,6 +64,9 @@ if grep -qi Microsoft /proc/version; then
 	alias open=explorer.exe
 	alias lcurl="cmd.exe /c curl"
     # alias drafts="cd `wslpath \"$(wslvar USERPROFILE)\"`/OneDrive/Blog"
+else
+    # node js version selector
+    source /usr/share/nvm/init-nvm.sh
 fi
 
 # only remote connections
