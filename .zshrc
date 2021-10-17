@@ -67,6 +67,9 @@ if grep -qi Microsoft /proc/version; then
 else
     # node js version selector
     source /usr/share/nvm/init-nvm.sh
+
+    # alternate apps
+    alias cat='bat'
 fi
 
 # only remote connections
