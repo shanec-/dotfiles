@@ -58,6 +58,11 @@ alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio -
 alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdl --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
 alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdl --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
 
+# git
+gt () {
+    pushd -q $(git worktree list | awk '{print $1}' | fzf)
+}
+
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
 	LS_COLORS="ow=01;36;40" && export LS_COLORS
