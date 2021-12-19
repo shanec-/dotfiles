@@ -63,6 +63,10 @@ gt () {
     pushd -q $(git worktree list | awk '{print $1}' | fzf)
 }
 
+wk () {
+    pushd -q $(ls -d ~/wk/* | fzf)
+}
+
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
 	LS_COLORS="ow=01;36;40" && export LS_COLORS
