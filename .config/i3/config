@@ -13,7 +13,6 @@ set $terminal kitty
 default_border pixel 1
 default_floating_border normal
 
-
 # Hide borders
 hide_edge_borders none
 
@@ -37,7 +36,7 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec "rofi -modi drun,run -show drun -theme gruvbox-dark-soft"
+bindsym $mod+d exec "rofi -modi drun,run -show drun -theme gruvbox-dark"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -47,10 +46,10 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 #exec --no-startup-id volumeicon
-#bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
-exec --no-startup-id pulseaudio
+bindsym $mod+Ctrl+m exec $terminal -e 'alsamixer'
+#exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
+#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -63,8 +62,7 @@ bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec $terminal -e 'ranger'
 bindsym $mod+Shift+F3 exec pcmanfm
-#bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec $terminal -e 'mocp'
+bindsym $mod+F4 exec brave
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b --experimental-backends
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -73,9 +71,9 @@ bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # bindsym $mod+Shift+semicolon exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Shift+semicolon --release exec "nitrogen --random --set-zoom-fill; exec notify-send 'wallpaper changed'"
+bindsym $mod+Shift+semicolon --release exec "nitrogen --head=0 --random --set-zoom-fill; nitrogen --head=1 --random --set-zoom-fill; exec notify-send 'wallpaper changed'"
 
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+h focus left
@@ -155,6 +153,10 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
+# default monitor assignments
+workspace $ws1 output primary
+workspace $ws5 output eDP-1
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -186,15 +188,10 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
 assign [class="Code"] $ws2
+assign [class="Brave-browser"] $ws3
 assign [class="Chromium"] $ws4
-
 assign [class="Skype"] $ws5
-# Does not seem to work. Moving it at runtime
-#assign [class="Spotify"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -282,16 +279,17 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --random --set-zoom-fill; sleep 1; picom -b --experimental-backends
+# exec --no-startup-id nitrogen --random --set-zoom-fill; sleep 1; picom -b --experimental-backends
+exec --no-startup-id nitrogen --random --set-zoom-fill;
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -corner 000- -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -364,7 +362,8 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  #client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused          #282828 #fbf1c7 #282828 #282828 #fbf1c7
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
