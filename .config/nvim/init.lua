@@ -1,6 +1,7 @@
+require "user.options"
 require "user.plugins"
+require "user.keymap"
 require "user.colorscheme"
 require "user.telescope"
-require "user.keymap"
 require "user.lualine"
 require "user.zenmode"
