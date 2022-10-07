@@ -14,14 +14,20 @@ set noshowmode
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-nvim-lsp'
 
 call plug#end()
 
@@ -43,12 +49,19 @@ nnoremap <leader>pv :Sex!<CR>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>rp :resize 100<CR>
+nnoremap <Leader>p "0p
 
+nnoremap <C-p> <cmd>Telescope find_files<CR>
+nnoremap <C-g> <cmd>Telescope git_files<CR>
+nnoremap <C-o> <cmd>Telescope buffers<CR>
 
-nnoremap <C-p> :Files<CR>
-nnoremap <C-g> :GFiles<CR>
-nnoremap <C-o> :Buffers<CR>
-nnoremap <C-f> :Rg 
+nnoremap <C-f> <cmd>Telescope live_grep<CR>
+nnoremap <C-/> :Commentary<CR>
+" nnoremap <C-p> :Files<CR>
+" nnoremap <C-g> :GFiles<CR>
+" nnoremap <C-o> :Buffers<CR>
+" nnoremap <C-f> :Rg 
+" nnoremap <C-/> :Commentary<CR>
 
 
 let g:limelight_conceal_ctermfg = 'gray'
