@@ -1,8 +1,34 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- so packer can update itself
-  use 'neovim/nvim-lspconfig' -- native LSP support
+  use { 
+      'neovim/nvim-lspconfig', -- native LSP support
+      requires = {
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim'
+      }
+  } 
+
+  -- mason / dap / linters
   use 'hrsh7th/nvim-cmp' -- autocompletion framework
   use 'hrsh7th/cmp-nvim-lsp' -- LSP autocompletion provider
+
+  -- use 'mfussenegger/nvim-dap'
+  -- use {
+  --   'jose-elias-alvarez/null-ls.nvim',
+  --   config = function() 
+  --       require("null-ls").setup({
+  --           sources = {
+  --               require("null-ls").builtins.formatting.stylua,
+  --               require("null-ls").builtins.diagnostics.eslint,
+  --               require("null-ls").builtins.completion.spell,
+  --           },
+  --       })
+  --   end
+  -- }
+    
+
+  -- commentary
+  use 'tpope/vim-commentary'
 
   -- color-scheme
   use 'gruvbox-community/gruvbox'
@@ -37,5 +63,6 @@ return require('packer').startup(function()
       require("twilight").setup {}
     end
   }
+  
 
 end)
