@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
-export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools
+export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools:$HOME/.local/bin
 
 ZSH_THEME="elessar"
 
@@ -69,13 +69,16 @@ if grep -qi Microsoft /proc/version; then
 	alias open=explorer.exe
 	alias lcurl="cmd.exe /c curl"
     # alias drafts="cd `wslpath \"$(wslvar USERPROFILE)\"`/OneDrive/Blog"
+    #
+    alias cat='batcat'
 else
     # node js version selector
     source /usr/share/nvm/init-nvm.sh
-
+    
     # alternate apps
     alias cat='bat'
 fi
+
 
 # only remote connections
 if [[ -n $SSH_CONNECTION ]]; then
