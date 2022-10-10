@@ -43,5 +43,6 @@ keymap('n', '<leader>dD', ':Telescope lsp_workspace_diagnostics<CR>', opts)
 keymap('n', '<leader>xx', ':Telescope lsp_code_actions<CR>', opts)
 keymap('n', '<leader>xd', ':%Telescope lsp_range_code_actions<CR>', opts)
 
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, {})
 
 return M

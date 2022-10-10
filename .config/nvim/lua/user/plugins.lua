@@ -11,6 +11,7 @@ return require('packer').startup(function()
   -- mason / dap / linters
   use 'hrsh7th/nvim-cmp' -- autocompletion framework
   use 'hrsh7th/cmp-nvim-lsp' -- LSP autocompletion provider
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
   -- use 'mfussenegger/nvim-dap'
   -- use {
