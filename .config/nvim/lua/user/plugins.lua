@@ -8,10 +8,14 @@ return require('packer').startup(function()
       }
   } 
 
-  -- mason / dap / linters
+  -- completion framework
   use 'hrsh7th/nvim-cmp' -- autocompletion framework
+
+  -- completion sources
   use 'hrsh7th/cmp-nvim-lsp' -- LSP autocompletion provider
   use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
 
   -- use 'mfussenegger/nvim-dap'
   -- use {
