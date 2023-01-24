@@ -78,6 +78,7 @@ if grep -qi Microsoft /proc/version; then
     alias cat='batcat'
 elif grep -qi Ubuntu /proc/version; then
     alias cat='batcat'
+    export XDG_CURRENT_DESKTOP=UNITY
 else
     # node js version selector
     source /usr/share/nvm/init-nvm.sh
