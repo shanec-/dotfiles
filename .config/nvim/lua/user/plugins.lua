@@ -4,7 +4,10 @@ return require('packer').startup(function()
       'neovim/nvim-lspconfig', -- native LSP support
       requires = {
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim'
+        'williamboman/mason-lspconfig.nvim',
+
+        -- Useful status updates for LSP
+        'j-hui/fidget.nvim',
       }
   } 
 
