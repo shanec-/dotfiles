@@ -1,6 +1,7 @@
 require "user.options"
 require "user.plugins"
 require "user.mason"
+require "user.fidget"
 require "user.colorscheme"
 require "user.keymap"
 require "user.telescope"

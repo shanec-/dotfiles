@@ -30,7 +30,7 @@ keymap('n', '<C-/>', ':Commentary<CR>', opts)
 vim.keymap.set('n', '<C-p>', tbuiltin.find_files, {})
 vim.keymap.set('n', '<C-f>', tbuiltin.live_grep, {})
 vim.keymap.set('n', '<C-g>', tbuiltin.git_files, {})
--- vim.keymap.set('n', '<C-o>', tbuiltin.buffers, {})
+vim.keymap.set('n', '<C-o>', tbuiltin.buffers, {})
 vim.keymap.set('n', 'fh', tbuiltin.help_tags, {})
 
 -- lsp
