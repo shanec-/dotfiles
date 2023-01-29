@@ -37,6 +37,8 @@ bindkey '^e' edit-command-line
 # Add time stamp on the right hand side
 RPROMPT='[%D{%L:%M:%S %p}]'
 
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
 # dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME"
 
