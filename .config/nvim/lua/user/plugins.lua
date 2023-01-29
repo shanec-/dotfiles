@@ -4,7 +4,10 @@ return require('packer').startup(function()
       'neovim/nvim-lspconfig', -- native LSP support
       requires = {
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim'
+        'williamboman/mason-lspconfig.nvim',
+
+        -- Useful status updates for LSP
+        'j-hui/fidget.nvim',
       }
   } 
 
@@ -17,6 +20,7 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-buffer'
 
+  use 'simrat39/rust-tools.nvim'
   -- use 'mfussenegger/nvim-dap'
   -- use {
   --   'jose-elias-alvarez/null-ls.nvim',
