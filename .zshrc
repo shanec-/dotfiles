@@ -7,7 +7,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools:
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z)
 
 [ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
 [ -f $HOME/.config/zsh/work.zsh ] && source $HOME/.config/zsh/work.zsh
