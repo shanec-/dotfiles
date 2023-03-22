@@ -68,6 +68,13 @@ wk () {
     pushd -q $(ls -d ~/wk/* | fzf)
 }
 
+vp () {
+    d=$(ls -d ~/vprojects/* | fzf)
+    n=$(basename $d)
+    pushd -q $d
+    $(tmux new -s $n -c $d)
+}
+
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
 	  LS_COLORS="ow=01;36;40" && export LS_COLORS

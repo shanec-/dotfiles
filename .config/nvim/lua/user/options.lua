@@ -1,3 +1,8 @@
+local gOptions = {
+  loaded_netrw = 1, -- nvim-tree
+  loaded_netrwPlugin = 1 -- nvim-tree
+}
+
 local options = {
   tabstop = 2,
   softtabstop = 2,
@@ -10,10 +15,14 @@ local options = {
   smartindent = true,
   colorcolumn = "100",
   scrolloff = 8,
-  showmode = false
+  showmode = false,
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
+end
+
+for k, v in pairs(gOptions) do
+  vim.g[k] = v
 end
 
