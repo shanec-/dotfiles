@@ -1,5 +1,10 @@
 local cmp = require 'cmp'
 cmp.setup {
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end
+  },
   mapping = {
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
@@ -17,5 +22,6 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
     { name = 'buffer' },
+    { name = 'vsnip' },
   }
 }
