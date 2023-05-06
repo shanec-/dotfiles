@@ -263,5 +263,13 @@ gaps inner 10
 smart_gaps on
 smart_borders on
 
+#
+# multimontor
+#
+output DP-1 pos 0 0
+output eDP-1 pos 0 1080
+output HDMI-A-2 pos 1920 0 transform 90
+#output HDMI-A-2 transform 180
+
 
 include /etc/sway/config.d/*
