@@ -20,6 +20,10 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-buffer'
 
+  -- snippets
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+
   use 'simrat39/rust-tools.nvim'
   -- use 'mfussenegger/nvim-dap'
   -- use {
@@ -42,6 +46,15 @@ return require('packer').startup(function()
   -- color-scheme
   use 'gruvbox-community/gruvbox'
 
+  -- nvim-tree
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
+
   -- lualine
   use {
     'nvim-lualine/lualine.nvim',
@@ -58,20 +71,12 @@ return require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   use 'kyazdani42/nvim-web-devicons'
 
-  --zenmode
+  --zenmode and twilight
   use {
     "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {}
-    end
+    requires = { 
+      "folke/twilight.nvim",
+    }
   }
-
-  use {
-    "folke/twilight.nvim",
-    config = function()
-      require("twilight").setup {}
-    end
-  }
-  
-
+ 
 end)

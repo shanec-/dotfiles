@@ -7,7 +7,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools:
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z)
 
 [ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
 [ -f $HOME/.config/zsh/work.zsh ] && source $HOME/.config/zsh/work.zsh
@@ -53,13 +53,13 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # adding flags
-alias df='df -h'                          # human-readable sizes
+alias df='duf'
 alias free='free -m'                      # show sizes in MB
 alias ls='exa'
-alias ytdl=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio '
-alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio --batch-file '
-alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdl -f bestvideo+bestaudio --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
-alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdl --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
+alias ytdl=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio '
+alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --batch-file '
+alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
+alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
 
 # git
 gt () {
@@ -68,6 +68,13 @@ gt () {
 
 wk () {
     pushd -q $(ls -d ~/wk/* | fzf)
+}
+
+vp () {
+    d=$(ls -d ~/vprojects/* | fzf)
+    n=$(basename $d)
+    pushd -q $d
+    $(tmux new -s $n -c $d)
 }
 
 # wsl specific configuration
