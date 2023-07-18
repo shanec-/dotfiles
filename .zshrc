@@ -65,7 +65,10 @@ gt () {
 }
 
 wk () {
-    pushd -q $(ls -d ~/wk/* | fzf)
+    d=$(ls -d ~/wk/* | fzf)
+    n=$(basename $d)
+    pushd -q $d
+    $(tmux new -s $n -c $d)
 }
 
 vp () {
