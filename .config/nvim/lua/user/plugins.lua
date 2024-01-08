@@ -25,7 +25,10 @@ return require('packer').startup(function()
   use 'hrsh7th/vim-vsnip'
 
   use 'simrat39/rust-tools.nvim'
-  -- use 'mfussenegger/nvim-dap'
+  use { 
+    "rcarriga/nvim-dap-ui", 
+    requires = {"mfussenegger/nvim-dap"} 
+  }
   -- use {
   --   'jose-elias-alvarez/null-ls.nvim',
   --   config = function() 
