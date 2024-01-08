@@ -23,7 +23,9 @@ keymap('n','<Leader>-', ':vertical resize -5<CR>', opts)
 keymap('n','<Leader>rp', ':resize 100<CR>', opts)
 
 -- helpers
-keymap('n','<leader>p', '"0p', opts)
+keymap('n','<leader>y', '"+y', opts)
+keymap('n','<leader>p', '"+p', opts)
+-- keymap('n','<leader>p', '"0p', opts)
 keymap('n', '<C-/>', ':Commentary<CR>', opts)
 
 -- telescope
