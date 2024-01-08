@@ -3,7 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
-export PATH=$PATH:/Users/[username]/.npm-packages/bin:/home/$USER/.dotnet/tools:$HOME/.local/bin
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin
 
 ZSH_THEME="elessar"
 
@@ -109,3 +110,11 @@ fi
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_DISABLE_MENU=TRUE
 eval "$(mcfly init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/wr/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
