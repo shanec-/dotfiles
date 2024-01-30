@@ -47,6 +47,8 @@ keymap('n', '<leader>dD', ':Telescope lsp_workspace_diagnostics<CR>', opts)
 keymap('n', '<leader>xx', ':Telescope lsp_code_actions<CR>', opts)
 keymap('n', '<leader>xd', ':%Telescope lsp_range_code_actions<CR>', opts)
 
+keymap('n', '<leader>gd', ':lua require"omnisharp_extended".telescope_lsp_definitions()<CR>', opts)
+
 -- keymap('n', '<C-k>', ':lua vim.lsp.buf.signature_help()<CR>', opts)
 -- dap
 keymap('n', '<F5>', ':lua require"dap".continue()<CR>', opts)

@@ -9,7 +9,8 @@ return require('packer').startup(function()
         -- Useful status updates for LSP
         'j-hui/fidget.nvim',
       }
-  } 
+  }
+ 
 
   -- completion framework
   use 'hrsh7th/nvim-cmp' -- autocompletion framework
@@ -42,6 +43,8 @@ return require('packer').startup(function()
   --   end
   -- }
     
+  -- omnisharp helper
+  use 'Hoffs/omnisharp-extended-lsp.nvim'
 
   -- commentary
   use 'tpope/vim-commentary'
