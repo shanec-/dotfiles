@@ -56,7 +56,7 @@ alias rm='rm -i'
 # adding flags
 alias df='duf'
 alias free='free -m'                      # show sizes in MB
-alias ls='exa'
+alias ls='eza'
 alias ytdl=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio '
 alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --batch-file '
 alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
