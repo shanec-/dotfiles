@@ -6,5 +6,5 @@
 
 require("user.plugins")
 require("user.colorscheme")
-require("user.keymap")
+-- require("user.keymap")
 require("user.lsp.omnisharp")
