@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin
+export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin:$HOME/.cargo/bin
 
 ZSH_THEME="elessar"
 
@@ -58,7 +58,7 @@ alias rm='rm -i'
 # alias nvim='lvim'
 alias df='duf'
 alias free='free -m'                      # show sizes in MB
-alias ls='exa'
+alias ls='eza'
 alias ytdl=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio '
 alias ytdlb=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --batch-file '
 alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' '
