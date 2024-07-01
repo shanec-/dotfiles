@@ -9,6 +9,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/
 ZSH_THEME="elessar"
 
 plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z)
+zstyle ':omz:alpha:lib:git' async-prompt no
 
 [ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
 [ -f $HOME/.config/zsh/work.zsh ] && source $HOME/.config/zsh/work.zsh
@@ -54,6 +55,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # adding flags
+# alias nvim='lvim'
 alias df='duf'
 alias free='free -m'                      # show sizes in MB
 alias ls='exa'
@@ -81,6 +83,10 @@ vp () {
     n=$(basename $d)
     pushd -q $d
     $(tmux new -s $n -c $d)
+}
+
+fa() {
+    xh POST http://localhost:5280/instructions provider=curltoaria instruction="$1" | sh
 }
 
 # wsl specific configuration
