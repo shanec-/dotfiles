@@ -72,14 +72,14 @@ gt () {
 }
 
 wk () {
-    d=$(ls -d ~/wk/* | fzf)
+    d=$(ls -d ~/wk/* | fzf) || return 0
     n=$(basename $d)
     pushd -q $d
     $(tmux new -s $n -c $d)
 }
 
 vp () {
-    d=$(ls -d ~/vprojects/* | fzf)
+    d=$(ls -d ~/vprojects/* | fzf) || return 0
     n=$(basename $d)
     pushd -q $d
     $(tmux new -s $n -c $d)
