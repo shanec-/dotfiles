@@ -8,7 +8,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z you-should-use)
 zstyle ':omz:alpha:lib:git' async-prompt no
 
 [ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
@@ -26,7 +26,7 @@ export EDITOR='nvim'
 export BROWSER='chromium'
 
 set -o vi
-echo "     " | lolcat
+echo "     👽" | lolcat
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -130,6 +130,9 @@ fi
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_DISABLE_MENU=TRUE
 eval "$(mcfly init zsh)"
+
+# zxoide
+eval "$(zoxide init zsh)"
 
 # pnpm
 export PNPM_HOME="/home/wr/.local/share/pnpm"
