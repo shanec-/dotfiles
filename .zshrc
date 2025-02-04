@@ -19,6 +19,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# fzf git installtion @ .fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export EDITOR='nvim'
 export BROWSER='chromium'
 
@@ -89,6 +92,11 @@ fa() {
     xh POST http://localhost:5280/instructions provider=curltoaria instruction="$1" | sh
 }
 
+mpvv() {
+  mpv "$1" & disown
+  return
+}
+
 # wsl specific configuration
 if grep -qi Microsoft /proc/version; then
 	  LS_COLORS="ow=01;36;40" && export LS_COLORS
@@ -100,6 +108,10 @@ if grep -qi Microsoft /proc/version; then
 elif grep -qi Ubuntu /proc/version; then
     alias cat='batcat'
     export XDG_CURRENT_DESKTOP=UNITY
+    
+    # allow root to run gtk applications under wayland
+    # https://askubuntu.com/a/981508 
+    xhost +SI:localuser:root > /dev/null 2>&1
 else
     # node js version selector
     source /usr/share/nvm/init-nvm.sh
@@ -126,3 +138,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
