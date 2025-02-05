@@ -68,6 +68,7 @@ alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio 
 alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
 alias pfc="find ~/.password-store -type f -not -path '*/\.git/*' -printf %P\\\n | sed 's/\.gpg$//' | fzf | xargs -I {} pass -c {}"
 alias pfs="find ~/.password-store -type f -not -path '*/\.git/*' -printf %P\\\n | sed 's/\.gpg$//' | fzf | xargs -I {} pass show {}"
+alias t='dstask'
 
 # git
 gt () {
