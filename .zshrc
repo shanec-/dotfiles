@@ -8,7 +8,7 @@ export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/
 
 ZSH_THEME="elessar"
 
-plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z)
+plugins=(ssh-agent git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages z you-should-use)
 zstyle ':omz:alpha:lib:git' async-prompt no
 
 [ -f $HOME/.config/zsh/home.zsh ] && source $HOME/.config/zsh/home.zsh
@@ -26,7 +26,7 @@ export EDITOR='nvim'
 export BROWSER='chromium'
 
 set -o vi
-echo "     " | lolcat
+echo "     👽" | lolcat
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -68,6 +68,7 @@ alias ytdlx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp -f bestvideo+bestaudio 
 alias ytdlbx=$'docker run -it --rm -v ~/dl:/data wr/ytdlp --external-downloader aria2c --external-downloader-args \'-c -j 10 -x 3 -s 3 -k 1M\' --batch-file '
 alias pfc="find ~/.password-store -type f -not -path '*/\.git/*' -printf %P\\\n | sed 's/\.gpg$//' | fzf | xargs -I {} pass -c {}"
 alias pfs="find ~/.password-store -type f -not -path '*/\.git/*' -printf %P\\\n | sed 's/\.gpg$//' | fzf | xargs -I {} pass show {}"
+alias t='dstask'
 
 # git
 gt () {
@@ -130,6 +131,9 @@ fi
 export MCFLY_KEY_SCHEME=vim
 export MCFLY_DISABLE_MENU=TRUE
 eval "$(mcfly init zsh)"
+
+# zxoide
+eval "$(zoxide init zsh)"
 
 # pnpm
 export PNPM_HOME="/home/wr/.local/share/pnpm"
