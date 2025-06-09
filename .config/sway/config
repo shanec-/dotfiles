@@ -194,6 +194,8 @@ input "type:keyboard" {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+Shift+f sticky toggle 
 #
 # Scratchpad:
 #
