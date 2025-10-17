@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
 export DOTNET_ROOT=$HOME/.dotnet
-export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin:$HOME/.cargo/bin
+export PATH=$PATH:/Users/[username]/.npm-packages/bin:$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/go/bin
 
 ZSH_THEME="elessar"
 
@@ -56,6 +56,7 @@ alias wgeto="wget -qO- "
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+alias rcp='rsync -avhP'
 
 # adding flags
 # alias nvim='lvim'
